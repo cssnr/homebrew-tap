@@ -7,9 +7,10 @@
 
 ## Formula
 
-| Name      | Repository                                        | Description                    |
-| --------- | ------------------------------------------------- | ------------------------------ |
-| `npmstat` | [cssnr/npmstat](https://github.com/cssnr/npmstat) | NPM Package Stats and Info CLI |
+| Name         | Repository                                           | Description                            |
+| ------------ | ---------------------------------------------------- | -------------------------------------- |
+| `npmstat`    | [cssnr/npmstat](https://github.com/cssnr/npmstat)    | NPM Package Stats and Info CLI         |
+| `sharex-cli` | [cssnr/npmstat](https://github.com/cssnr/sharex-cli) | ShareX Command Line Interface Uploader |
 
 ## Usage
 
@@ -22,13 +23,13 @@ brew tap cssnr/tap
 Then you can install a formula.
 
 ```shell
-brew install npmstat
+brew install sharex-cli
 ```
 
 For naming conflicts, use the full name.
 
 ```shell
-brew install cssnr/tap/npmstat
+brew install cssnr/tap/sharex-cli
 ```
 
 To update, first update all the formulas.
@@ -40,13 +41,13 @@ brew update
 Then you can update a formula with install.
 
 ```shell
-brew install npmstat
+brew install sharex-cli
 ```
 
 Alternatively, you can also force a re-installation.
 
 ```shell
-brew reinstall npmstat
+brew reinstall sharex-cli
 ```
 
 However, if your goal was to upgrade all installed formula.
