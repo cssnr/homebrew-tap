@@ -7,20 +7,23 @@
 
 ## Formula
 
-| Name         | Repository                                           | Description                            |
-| ------------ | ---------------------------------------------------- | -------------------------------------- |
-| `npmstat`    | [cssnr/npmstat](https://github.com/cssnr/npmstat)    | NPM Package Stats and Info CLI         |
-| `sharex-cli` | [cssnr/npmstat](https://github.com/cssnr/sharex-cli) | ShareX Command Line Interface Uploader |
+| Name                                | Repository                                              | Description                            |
+| :---------------------------------- | :------------------------------------------------------ | :------------------------------------- |
+| [npmstat](Formula/npmstat.rb)       | [cssnr/npmstat](https://github.com/cssnr/npmstat)       | NPM Package Stats and Info CLI         |
+| [toml-run](Formula/toml-run.rb)     | [cssnr/toml-run](https://github.com/cssnr/toml-run)     | Run Custom pyproject.toml Scripts      |
+| [sharex-cli](Formula/sharex-cli.rb) | [cssnr/sharex-cli](https://github.com/cssnr/sharex-cli) | ShareX Command Line Interface Uploader |
 
 ## Usage
 
-First you must tap the keg (so only 21+ in the USA)...
+Homebrew Installation: <https://docs.brew.sh/Installation>
+
+First you must tap the tap.
 
 ```shell
 brew tap cssnr/tap
 ```
 
-Then you can install a formula.
+Then you can install a [Formula](#Formula).
 
 ```shell
 brew install sharex-cli
@@ -30,6 +33,12 @@ For naming conflicts, use the full name.
 
 ```shell
 brew install cssnr/tap/sharex-cli
+```
+
+To list [Formula](#Formula) use `--json`.
+
+```shell
+brew tap-info cssnr/tap --json | jq '.[0].formula_names'
 ```
 
 To update, first update all the formulas.
@@ -56,7 +65,13 @@ However, if your goal was to upgrade all installed formula.
 brew upgrade
 ```
 
-For more information: https://docs.brew.sh/
+If it's hot garbage.
+
+```shell
+brew uninstall sharex-cli
+```
+
+Homebrew documentation: https://docs.brew.sh/
 
 ## Facts
 
