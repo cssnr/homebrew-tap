@@ -7,65 +7,65 @@
 
 ## Formula
 
-| Name                                | Repository                                              | Description                            |
-| :---------------------------------- | :------------------------------------------------------ | :------------------------------------- |
-| [npmstat](Formula/npmstat.rb)       | [cssnr/npmstat](https://github.com/cssnr/npmstat)       | NPM Package Stats and Info CLI         |
-| [toml-run](Formula/toml-run.rb)     | [cssnr/toml-run](https://github.com/cssnr/toml-run)     | Run Custom pyproject.toml Scripts      |
-| [sharex-cli](Formula/sharex-cli.rb) | [cssnr/sharex-cli](https://github.com/cssnr/sharex-cli) | ShareX Command Line Interface Uploader |
+| Name                                | Type   | Repository                                              | Description                            |
+| :---------------------------------- | ------ | :------------------------------------------------------ | :------------------------------------- |
+| [npmstat](Formula/npmstat.rb)       | python | [cssnr/npmstat](https://github.com/cssnr/npmstat)       | NPM Package Stats and Info CLI         |
+| [sharex-cli](Formula/sharex-cli.rb) | binary | [cssnr/sharex-cli](https://github.com/cssnr/sharex-cli) | ShareX Command Line Interface Uploader |
+| [toml-run](Formula/toml-run.rb)     | python | [cssnr/toml-run](https://github.com/cssnr/toml-run)     | Run Custom pyproject.toml Scripts      |
+
+```shell
+brew install cssnr/tap/npmstat
+brew install cssnr/tap/sharex-cli
+brew install cssnr/tap/toml-run
+```
 
 ## Usage
 
 Homebrew Installation: <https://docs.brew.sh/Installation>
 
-First you must tap the tap.
-
-```shell
-brew tap cssnr/tap
-```
-
-Then you can install a [Formula](#Formula).
-
-```shell
-brew install sharex-cli
-```
-
-For naming conflicts, use the full name.
+Install without tapping.
 
 ```shell
 brew install cssnr/tap/sharex-cli
 ```
 
-To list [Formula](#Formula) use `--json`.
+Just add the tap.
+
+```shell
+brew tap cssnr/tap
+```
+
+List formula w/ tap-info `--json`.
 
 ```shell
 brew tap-info cssnr/tap --json | jq '.[0].formula_names'
 ```
 
-To update, first update all the formulas.
+Update the taps.
 
 ```shell
 brew update
 ```
 
-Then you can update a formula with install.
+Update a formula.
 
 ```shell
 brew install sharex-cli
 ```
 
-Alternatively, you can also force a re-installation.
+Force a re-installation.
 
 ```shell
 brew reinstall sharex-cli
 ```
 
-However, if your goal was to upgrade all installed formula.
+Upgrade all installed formula.
 
 ```shell
 brew upgrade
 ```
 
-If it's hot garbage.
+Uninstall a formula.
 
 ```shell
 brew uninstall sharex-cli
