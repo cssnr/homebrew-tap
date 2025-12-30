@@ -1,3 +1,5 @@
+[![Homebrew Tap](https://repository-images.githubusercontent.com/1122652533/1ae93ec0-dab2-4f77-91cb-77548b76f1c8)](https://github.com/cssnr/homebrew-tap?tab=readme-ov-file#readme)
+
 # Homebrew Tap
 
 - [Formula](#Formula)
@@ -5,13 +7,17 @@
 - [Facts](#Facts)
 - [Contributing](#Contributing)
 
+```shell
+brew tap cssnr/tap
+```
+
 ## Formula
 
-| Name                                | Type   | Repository                                              | Description                            |
-| :---------------------------------- | ------ | :------------------------------------------------------ | :------------------------------------- |
-| [npmstat](Formula/npmstat.rb)       | python | [cssnr/npmstat](https://github.com/cssnr/npmstat)       | NPM Package Stats and Info CLI         |
-| [sharex-cli](Formula/sharex-cli.rb) | binary | [cssnr/sharex-cli](https://github.com/cssnr/sharex-cli) | ShareX Command Line Interface Uploader |
-| [toml-run](Formula/toml-run.rb)     | python | [cssnr/toml-run](https://github.com/cssnr/toml-run)     | Run Custom pyproject.toml Scripts      |
+| Formula                                       |  Type  | Repository                                              | Description                            |
+| :-------------------------------------------- | :----: | :------------------------------------------------------ | :------------------------------------- |
+| [cssnr/tap/npmstat](Formula/npmstat.rb)       | python | [cssnr/npmstat](https://github.com/cssnr/npmstat)       | NPM Package Stats and Info CLI         |
+| [cssnr/tap/sharex-cli](Formula/sharex-cli.rb) | binary | [cssnr/sharex-cli](https://github.com/cssnr/sharex-cli) | ShareX Command Line Interface Uploader |
+| [cssnr/tap/toml-run](Formula/toml-run.rb)     | python | [cssnr/toml-run](https://github.com/cssnr/toml-run)     | Run Custom pyproject.toml Scripts      |
 
 ```shell
 brew install cssnr/tap/npmstat
@@ -23,16 +29,10 @@ brew install cssnr/tap/toml-run
 
 Homebrew Installation: <https://docs.brew.sh/Installation>
 
-Install without tapping.
+Install formula without tapping.
 
 ```shell
 brew install cssnr/tap/sharex-cli
-```
-
-Just add the tap.
-
-```shell
-brew tap cssnr/tap
 ```
 
 List formula w/ tap-info `--json`.
@@ -41,7 +41,7 @@ List formula w/ tap-info `--json`.
 brew tap-info cssnr/tap --json | jq '.[0].formula_names'
 ```
 
-Update the taps.
+Update taps.
 
 ```shell
 brew update
@@ -78,6 +78,7 @@ Homebrew documentation: https://docs.brew.sh/
 - 2014 - I said homebrew is going to be big...
 - 2025 - I still don't know anyone using it, but...
 - 2025 (hours later) - I get it now... Caveat emptor!
+- 2025 (days later) - Apparently still used by _insert apple fanboy term here_.
 
 ## Contributing
 

@@ -1,0 +1,152 @@
+name: "Test"
+
+on:
+  workflow_dispatch:
+  #push:
+  #  branches: [master]
+  #  paths: ["Formula/*.rb"]
+  pull_request:
+    branches: [master]
+    paths: ["Formula/*.rb"]
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: "Test"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    permissions:
+      contents: read
+
+    env:
+      tap-name: cssnr/tap
+      tap-path: ${{ github.workspace }}
+      HOMEBREW_DEVELOPER: 1
+      HOMEBREW_NO_AUTO_UPDATE: 1
+      HOMEBREW_NO_INSTALL_CLEANUP: 1
+      HOMEBREW_NO_INSTALL_UPGRADE: 1
+      HOMEBREW_VERBOSE: 1
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v6
+
+      - name: "Debug event.json"
+        continue-on-error: true
+        run: cat "${GITHUB_EVENT_PATH}"
+      - name: "Debug CTX github"
+        continue-on-error: true
+        env:
+          GITHUB_CTX: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CTX"
+      - name: "Debug Environment"
+        continue-on-error: true
+        run: env
+
+      - name: "Debug"
+        continue-on-error: true
+        run: |
+          echo "github.workflow: ${{ github.workflow }}"
+          echo "github.repository: ${{ github.repository }}"
+          echo "github.event_name: ${{ github.event_name }}"
+          echo "--------------------"
+          echo "env.tap-path: ${{ env.tap-path  }}"
+          echo "env.tap-name: ${{ env.tap-name  }}"
+          echo "::group::ls"
+          ls -lah .
+          echo "::endgroup::"
+
+      - name: "Changed Files"
+        id: changed-files
+        uses: tj-actions/changed-files@24d32ffd492484c1d75e0c0b894501ddb9d30d62 # v47
+        with:
+          files: "Formula/*.rb"
+
+      #- name: "Verify Files"
+      #  env:
+      #    ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
+      #  run: |
+      #    if [ -z "${ALL_CHANGED_FILES}" ];then
+      #      echo "No Changed Files."
+      #      exit 1
+      #    fi
+
+      #- name: "Cache Restore"
+      #  id: cache-restore
+      #  uses: actions/cache/restore@v4
+      #  with:
+      #    path: /home/linuxbrew/.linuxbrew
+      #    key: linuxbrew
+
+      - name: "Set up Homebrew"
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@main
+
+      - name: "Debug Homebrew"
+        run: |
+          which brew
+          brew --version
+          echo "Tap Path: ${{ env.tap-path }}"
+          echo "::group::ls Formula"
+          ls -lah "${{ env.tap-path }}/Formula"
+          echo "::endgroup::"
+
+      - name: "Brew Tap"
+        run: |
+          brew tap ${{ env.tap-name  }} "file://${{ env.tap-path  }}"
+
+      - name: "Brew Tap Info"
+        run: |
+          brew tap-info ${{ env.tap-name  }}
+          brew tap-info ${{ env.tap-name  }} --json
+
+      - name: "Brew Install"
+        env:
+          ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
+        run: |
+          for f in ${ALL_CHANGED_FILES}; do
+            filename=$(basename -- "${f}")
+            formula="${filename%.*}"
+            echo "::group::Installing: ${{ env.tap-name  }}/${formula}"
+            brew reinstall "${{ env.tap-name  }}/${formula}" ||
+              echo "Install Failed: ${formula}" | tee -a failures.txt
+            echo "::endgroup::"
+          done
+
+      - name: "Brew Test"
+        env:
+          ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
+        run: |
+          for f in ${ALL_CHANGED_FILES}; do
+            filename=$(basename -- "${f}")
+            formula="${filename%.*}"
+            echo "::group::Testing: ${{ env.tap-name  }}/${formula}"
+            brew test "${{ env.tap-name  }}/${formula}" ||
+              echo "Test Failed: ${formula}" | tee -a failures.txt
+            echo "::endgroup::"
+          done
+
+      - name: "Debug Linuxbrew"
+        continue-on-error: true
+        run: |
+          du -sh /home/linuxbrew/.linuxbrew
+          ls -lAh /home/linuxbrew/.linuxbrew
+
+      #- name: "Cache Save"
+      #  id: cache-save
+      #  uses: actions/cache/save@v4
+      #  with:
+      #    path: /home/linuxbrew/.linuxbrew
+      #    key: linuxbrew
+
+      - name: "Check Failures"
+        run: |
+          if [ -f "failures.txt" ];then
+            echo "Test Failures:"
+            cat failures.txt
+            exit 1
+          fi
