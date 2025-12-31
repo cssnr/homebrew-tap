@@ -130,11 +130,24 @@ jobs:
             echo "::endgroup::"
           done
 
-      - name: "Debug Linuxbrew"
-        continue-on-error: true
-        run: |
-          du -sh /home/linuxbrew/.linuxbrew
-          ls -lAh /home/linuxbrew/.linuxbrew
+      #- name: "Brew Aliases"
+      #  env:
+      #    ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
+      #  run: |
+      #    for f in ${ALL_CHANGED_FILES}; do
+      #      filename=$(basename -- "${f}")
+      #      formula="${filename%.*}"
+      #      echo "::group::Checking: ${{ env.tap-name  }}/${formula}"
+      #      brew test "${{ env.tap-name  }}/${formula}" ||
+      #        echo "Test Failed: ${formula}" | tee -a failures.txt
+      #      echo "::endgroup::"
+      #    done
+
+      #- name: "Debug Linuxbrew"
+      #  continue-on-error: true
+      #  run: |
+      #    du -sh /home/linuxbrew/.linuxbrew
+      #    ls -lAh /home/linuxbrew/.linuxbrew
 
       #- name: "Cache Save"
       #  id: cache-save
@@ -150,3 +163,10 @@ jobs:
             cat failures.txt
             exit 1
           fi
+
+      - name: "Send Failure Notification"
+        if: ${{ failure() }}
+        uses: sarisia/actions-status-discord@b8381b25576cb341b2af39926ab42c5056cc44ed # v1.15.5
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          description: ${{ github.event.repository.html_url }}/actions/runs/${{ github.run_id }}

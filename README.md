@@ -1,4 +1,4 @@
-[![Homebrew Tap](https://repository-images.githubusercontent.com/1122652533/1ae93ec0-dab2-4f77-91cb-77548b76f1c8)](https://github.com/cssnr/homebrew-tap?tab=readme-ov-file#readme)
+[![Homebrew Tap](https://repository-images.githubusercontent.com/1122652533/7bc513cb-f1b9-4aae-89db-d87bbffed760)](https://github.com/cssnr/homebrew-tap?tab=readme-ov-file#readme)
 
 # Homebrew Tap
 
