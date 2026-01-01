@@ -13,13 +13,15 @@ brew tap cssnr/tap
 
 ## Formula
 
-| Formula                                       |  Type  | Repository                                              | Description                            |
-| :-------------------------------------------- | :----: | :------------------------------------------------------ | :------------------------------------- |
-| [cssnr/tap/npmstat](Formula/npmstat.rb)       | python | [cssnr/npmstat](https://github.com/cssnr/npmstat)       | NPM Package Stats and Info CLI         |
-| [cssnr/tap/sharex-cli](Formula/sharex-cli.rb) | binary | [cssnr/sharex-cli](https://github.com/cssnr/sharex-cli) | ShareX Command Line Interface Uploader |
-| [cssnr/tap/toml-run](Formula/toml-run.rb)     | python | [cssnr/toml-run](https://github.com/cssnr/toml-run)     | Run Custom pyproject.toml Scripts      |
+| Formula                                                   |  Alias   |  Type  | Repository                                              | Description                              |
+| :-------------------------------------------------------- | :------: | :----: | :------------------------------------------------------ | :--------------------------------------- |
+| [brew-python-resources](Formula/brew-python-resources.rb) |  `bpr`   | python | [cssnr/npmstat](https://github.com/cssnr/npmstat)       | Update Homebrew Formula Python Resources |
+| [npmstat](Formula/npmstat.rb)                             |    -     | python | [cssnr/npmstat](https://github.com/cssnr/npmstat)       | NPM Package Stats and Info CLI           |
+| [sharex-cli](Formula/sharex-cli.rb)                       | `sharex` | binary | [cssnr/sharex-cli](https://github.com/cssnr/sharex-cli) | ShareX Command Line Interface Uploader   |
+| [toml-run](Formula/toml-run.rb)                           |  `run`   | python | [cssnr/toml-run](https://github.com/cssnr/toml-run)     | Run Custom pyproject.toml Scripts        |
 
 ```shell
+brew install cssnr/tap/brew-python-resources
 brew install cssnr/tap/npmstat
 brew install cssnr/tap/sharex-cli
 brew install cssnr/tap/toml-run
