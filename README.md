@@ -13,7 +13,7 @@ brew tap cssnr/tap
 
 ## Formula
 
-| Name&nbsp;of&nbsp;Formula                                 |  Alias   |  Type  | Source&nbsp;Repository                                                        | Description                              |
+| Formula&nbsp;Name                                         |  Alias   |  Type  | Source&nbsp;Repository                                                        | Description                              |
 | :-------------------------------------------------------- | :------: | :----: | :---------------------------------------------------------------------------- | :--------------------------------------- |
 | [brew-python-resources](Formula/brew-python-resources.rb) |  `bpr`   | python | [cssnr/brew-python-resources](https://github.com/cssnr/brew-python-resources) | Update Homebrew Formula Python Resources |
 | [npmstat](Formula/npmstat.rb)                             |    -     | python | [cssnr/npmstat](https://github.com/cssnr/npmstat)                             | NPM Package Stats and Info CLI           |
@@ -53,6 +53,12 @@ Update a formula.
 
 ```shell
 brew install sharex-cli
+```
+
+Install formula with an alias.
+
+```shell
+brew install sharex
 ```
 
 Force a re-installation.

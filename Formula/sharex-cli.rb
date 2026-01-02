@@ -2,6 +2,7 @@ class SharexCli < Formula
   desc "ShareX Command Line Interface Uploader"
   homepage "https://github.com/cssnr/sharex-cli"
   license "MIT"
+
   version "0.0.3"
 
   on_macos do
