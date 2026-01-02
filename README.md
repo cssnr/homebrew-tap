@@ -13,12 +13,12 @@ brew tap cssnr/tap
 
 ## Formula
 
-| Formula                                                   |  Alias   |  Type  | Repository                                              | Description                              |
-| :-------------------------------------------------------- | :------: | :----: | :------------------------------------------------------ | :--------------------------------------- |
-| [brew-python-resources](Formula/brew-python-resources.rb) |  `bpr`   | python | [cssnr/npmstat](https://github.com/cssnr/npmstat)       | Update Homebrew Formula Python Resources |
-| [npmstat](Formula/npmstat.rb)                             |    -     | python | [cssnr/npmstat](https://github.com/cssnr/npmstat)       | NPM Package Stats and Info CLI           |
-| [sharex-cli](Formula/sharex-cli.rb)                       | `sharex` | binary | [cssnr/sharex-cli](https://github.com/cssnr/sharex-cli) | ShareX Command Line Interface Uploader   |
-| [toml-run](Formula/toml-run.rb)                           |  `run`   | python | [cssnr/toml-run](https://github.com/cssnr/toml-run)     | Run Custom pyproject.toml Scripts        |
+| Name&nbsp;of&nbsp;Formula                                 |  Alias   |  Type  | Source&nbsp;Repository                                                        | Description                              |
+| :-------------------------------------------------------- | :------: | :----: | :---------------------------------------------------------------------------- | :--------------------------------------- |
+| [brew-python-resources](Formula/brew-python-resources.rb) |  `bpr`   | python | [cssnr/brew-python-resources](https://github.com/cssnr/brew-python-resources) | Update Homebrew Formula Python Resources |
+| [npmstat](Formula/npmstat.rb)                             |    -     | python | [cssnr/npmstat](https://github.com/cssnr/npmstat)                             | NPM Package Stats and Info CLI           |
+| [sharex-cli](Formula/sharex-cli.rb)                       | `sharex` | binary | [cssnr/sharex-cli](https://github.com/cssnr/sharex-cli)                       | ShareX Command Line Interface Uploader   |
+| [toml-run](Formula/toml-run.rb)                           |  `run`   | python | [cssnr/toml-run](https://github.com/cssnr/toml-run)                           | Run Custom pyproject.toml Scripts        |
 
 ```shell
 brew install cssnr/tap/brew-python-resources
