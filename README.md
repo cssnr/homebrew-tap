@@ -1,4 +1,10 @@
-[![Homebrew Tap](https://repository-images.githubusercontent.com/1122652533/7bc513cb-f1b9-4aae-89db-d87bbffed760)](https://github.com/cssnr/homebrew-tap?tab=readme-ov-file#readme)
+[![Homebrew Tap](https://repository-images.githubusercontent.com/1122652533/7bc513cb-f1b9-4aae-89db-d87bbffed760)](https://github.com/cssnr/homebrew-tap?tab=readme-ov-file#readme)  
+[![Formula](https://img.shields.io/github/directory-file-count/cssnr/homebrew-tap/Formula?type=file&extension=rb&style=for-the-badge&logo=homebrew&logoColor=white&color=blue&label=formula)](#Formula)
+[![Aliases](https://img.shields.io/github/directory-file-count/cssnr/homebrew-tap/Aliases?type=file&style=for-the-badge&logo=sharp&logoColor=white&color=blue&label=aliases)](#Formula)
+[![GitHub Last Commit](https://img.shields.io/github/last-commit/cssnr/homebrew-tap?style=for-the-badge&logo=github&color=blue&label=updated)](https://github.com/cssnr/homebrew-tap/commits/master/)
+[![GitHub Org Stars](https://img.shields.io/github/stars/cssnr?style=for-the-badge&logo=southwestairlines&label=org%20stars)](https://cssnr.github.io/)
+[![Discord](https://img.shields.io/discord/899171661457293343?style=for-the-badge&logo=discord&logoColor=white&label=discord&color=7289da)](https://discord.gg/wXy6m2X8wY)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-72a5f2?style=for-the-badge&logo=kofi&label=support)](https://ko-fi.com/cssnr)
 
 # Homebrew Tap
 
@@ -11,15 +17,19 @@
 brew tap cssnr/tap
 ```
 
+GitHub Action to update Formula: <https://github.com/cssnr/homebrew-action>
+
 ## Formula
 
-| Formula&nbsp;Name                                         |  Alias   |  Type  | Source&nbsp;Repository                                                                        | Description                              |
-| :-------------------------------------------------------- | :------: | :----: | :-------------------------------------------------------------------------------------------- | :--------------------------------------- |
-| [brew-python-resources](Formula/brew-python-resources.rb) |  `bpr`   | python | [cssnr/brew-python-resources](https://github.com/cssnr/brew-python-resources)                 | Update Homebrew Formula Python Resources |
-| [npmstat](Formula/npmstat.rb)                             |    -     | python | [cssnr/npmstat](https://github.com/cssnr/npmstat)                                             | NPM Package Stats and Info CLI           |
-| [get-contributors](Formula/get-contributors.rb)           |    -     |  node  | [cssnr/vitepress-plugin-contributors](https://github.com/cssnr/vitepress-plugin-contributors) | Generate GitHub Repository Contributors  |
-| [sharex-cli](Formula/sharex-cli.rb)                       | `sharex` | binary | [cssnr/sharex-cli](https://github.com/cssnr/sharex-cli)                                       | ShareX Command Line Interface Uploader   |
-| [toml-run](Formula/toml-run.rb)                           |  `run`   | python | [cssnr/toml-run](https://github.com/cssnr/toml-run)                                           | Run Custom pyproject.toml Scripts        |
+All Formula support macOS and Linux on ARM (Apple Silicon) and Intel processors.
+
+| Formula&nbsp;Name                                         |  Alias   |  Type  | Source&nbsp;Repository                                                                        | Description                                  |
+| :-------------------------------------------------------- | :------: | :----: | :-------------------------------------------------------------------------------------------- | :------------------------------------------- |
+| [brew-python-resources](Formula/brew-python-resources.rb) |  `bpr`   | python | [cssnr/brew-python-resources](https://github.com/cssnr/brew-python-resources)                 | Update Homebrew Formula Python Resources     |
+| [npmstat](Formula/npmstat.rb)                             |    -     | python | [cssnr/npmstat](https://github.com/cssnr/npmstat)                                             | NPM Package Stats and Info CLI and Module    |
+| [get-contributors](Formula/get-contributors.rb)           |    -     |  node  | [cssnr/vitepress-plugin-contributors](https://github.com/cssnr/vitepress-plugin-contributors) | Generate GitHub Repository Contributors JSON |
+| [sharex-cli](Formula/sharex-cli.rb)                       | `sharex` | binary | [cssnr/sharex-cli](https://github.com/cssnr/sharex-cli)                                       | ShareX Command Line Interface Uploader       |
+| [toml-run](Formula/toml-run.rb)                           |  `run`   | python | [cssnr/toml-run](https://github.com/cssnr/toml-run)                                           | Run Custom pyproject.toml Scripts            |
 
 ```shell
 brew install cssnr/tap/brew-python-resources
@@ -31,12 +41,18 @@ brew install cssnr/tap/toml-run
 
 ## Usage
 
-Homebrew Installation: <https://docs.brew.sh/Installation>
+Homebrew: <https://brew.sh/>
 
-Install formula without tapping.
+Install formula without tapping (recommended).
 
 ```shell
 brew install cssnr/tap/sharex-cli
+```
+
+Add the tap without installing anything.
+
+```shell
+brew tap cssnr/tap
 ```
 
 List formula w/ tap-info `--json`.
@@ -81,7 +97,8 @@ Uninstall a formula.
 brew uninstall sharex-cli
 ```
 
-Homebrew documentation: https://docs.brew.sh/
+Documentation: <https://docs.brew.sh/>  
+Installation: <https://docs.brew.sh/Installation>
 
 ## Facts
 
