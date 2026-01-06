@@ -1,6 +1,5 @@
 [![Homebrew Tap](https://repository-images.githubusercontent.com/1122652533/7bc513cb-f1b9-4aae-89db-d87bbffed760)](https://github.com/cssnr/homebrew-tap?tab=readme-ov-file#readme)  
 [![Formula](https://img.shields.io/github/directory-file-count/cssnr/homebrew-tap/Formula?type=file&extension=rb&style=for-the-badge&logo=homebrew&logoColor=white&color=blue&label=formula)](#Formula)
-[![Aliases](https://img.shields.io/github/directory-file-count/cssnr/homebrew-tap/Aliases?type=file&style=for-the-badge&logo=sharp&logoColor=white&color=blue&label=aliases)](#Formula)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/cssnr/homebrew-tap?style=for-the-badge&logo=github&color=blue&label=updated)](https://github.com/cssnr/homebrew-tap/commits/master/)
 [![GitHub Org Stars](https://img.shields.io/github/stars/cssnr?style=for-the-badge&logo=southwestairlines&label=org%20stars)](https://cssnr.github.io/)
 [![Discord](https://img.shields.io/discord/899171661457293343?style=for-the-badge&logo=discord&logoColor=white&label=discord&color=7289da)](https://discord.gg/wXy6m2X8wY)
