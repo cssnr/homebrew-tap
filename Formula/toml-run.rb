@@ -21,6 +21,20 @@ class TomlRun < Formula
     bin.install_symlink "run" => "toml-run"
   end
 
+  def caveats
+    <<~EOF
+      TOML Run has been installed.
+      Access the CLI directly or with the alias:
+
+        toml-run
+        run
+
+      For more details, see the documentation:
+      https://cssnr.github.io/toml-run/
+
+    EOF
+  end
+
   test do
     assert_match version.to_s, shell_output("#{bin}/toml-run -V")
     (testpath/"pyproject.toml").write <<~TOML

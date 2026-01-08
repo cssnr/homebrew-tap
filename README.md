@@ -1,8 +1,8 @@
 [![Homebrew Tap](https://repository-images.githubusercontent.com/1122652533/7bc513cb-f1b9-4aae-89db-d87bbffed760)](https://github.com/cssnr/homebrew-tap?tab=readme-ov-file#readme)  
-[![Formula](https://img.shields.io/github/directory-file-count/cssnr/homebrew-tap/Formula?type=file&extension=rb&style=for-the-badge&logo=homebrew&color=blue&label=formula)](#Formula)
-[![Test](https://img.shields.io/github/actions/workflow/status/cssnr/homebrew-tap/test.yaml?style=for-the-badge&logo=cachet&logoColor=white&label=test)](https://github.com/cssnr/homebrew-tap/actions/workflows/test.yaml)
+[![Formula](https://img.shields.io/github/directory-file-count/cssnr/homebrew-tap/Formula?type=file&extension=rb&style=for-the-badge&logo=homebrew&color=fbb040&label=formula)](#Formula)
+[![Test](https://img.shields.io/github/actions/workflow/status/cssnr/homebrew-tap/test.yaml?style=for-the-badge&logo=verizon&label=test)](https://github.com/cssnr/homebrew-tap/actions/workflows/test.yaml)
 [![Last Commit](https://img.shields.io/github/last-commit/cssnr/homebrew-tap?style=for-the-badge&logo=github&label=updated)](https://github.com/cssnr/homebrew-tap/commits/master/)
-[![Org Stars](https://img.shields.io/github/stars/cssnr?style=for-the-badge&logo=southwestairlines&label=org%20stars)](https://cssnr.github.io/)
+[![Org Stars](https://img.shields.io/github/stars/cssnr?style=for-the-badge&logo=riseup&logoColor=white&label=org%20stars)](https://cssnr.github.io/)
 [![Discord](https://img.shields.io/discord/899171661457293343?style=for-the-badge&logo=discord&logoColor=white&label=discord&color=7289da)](https://discord.gg/wXy6m2X8wY)
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-72a5f2?style=for-the-badge&logo=kofi&label=support)](https://ko-fi.com/cssnr)
 
@@ -17,7 +17,7 @@
 brew tap cssnr/tap
 ```
 
-GitHub Action to update Formula: <https://github.com/cssnr/homebrew-action>
+🍺 GitHub Action to update Formula: <https://github.com/cssnr/homebrew-action>
 
 ## Formula
 
