@@ -3,8 +3,8 @@ class Npmstat < Formula
 
   desc "NPM Package Stats and Info CLI"
   homepage "https://github.com/cssnr/npmstat"
-  url "https://files.pythonhosted.org/packages/df/19/5eab8db35cb34e8151e3edad578ec2686a08f3e3d10f1e655eab867bbe01/npmstat-0.1.1.tar.gz"
-  sha256 "956710d5b0d532acc03ed6aa921dc849e2d10aee4484aac12fe9117191668b9c"
+  url "https://files.pythonhosted.org/packages/e7/6c/9ea281908ea30eb6973d5d4d61abbeeeaa32134b64b74bee795ba223b556/npmstat-0.1.2.tar.gz"
+  sha256 "fab1b8421b34fcc152e43f5b38522762ee3621094df0b13538a7dacebe31332b"
   license "MIT"
 
   depends_on "python3"
