@@ -1,6 +1,7 @@
 name: "Test"
 
 on:
+  workflow_dispatch:
   push:
     branches: [master]
     paths: ["Formula/*.rb"]
@@ -30,8 +31,11 @@ jobs:
           files: "*.rb"
 
       - name: "Debug Files"
+        continue-on-error: true
+        env:
+          all_changed_files: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
-          echo '${{ steps.changed-files.outputs.all_changed_files }}'
+          echo "${all_changed_files}"
 
   test:
     name: "Test"
