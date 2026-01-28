@@ -26,6 +26,8 @@ All Formula support macOS and Linux on ARM (Apple Silicon) and Intel processors.
 | Formula&nbsp;Name                                         |  Alias   |  Type  | Source&nbsp;Repository                                                                        | Description                                  |
 | :-------------------------------------------------------- | :------: | :----: | :-------------------------------------------------------------------------------------------- | :------------------------------------------- |
 | [brew-python-resources](Formula/brew-python-resources.rb) |  `bpr`   | python | [cssnr/brew-python-resources](https://github.com/cssnr/brew-python-resources)                 | Update Homebrew Formula Python Resources     |
+| [bup](Formula/bup.rb)                                     |    -     | binary | [smashedr/bup](https://github.com/smashedr/bup)                                               | Back UP CLI written in Go                    |
+| [hls](Formula/hls.rb)                                     |    -     | binary | [smashedr/hls-downloader-go](https://github.com/smashedr/hls-downloader-go)                   | Back UP CLI written in Go                    |
 | [npmstat](Formula/npmstat.rb)                             |    -     | python | [cssnr/npmstat](https://github.com/cssnr/npmstat)                                             | NPM Package Stats and Info CLI and Module    |
 | [get-contributors](Formula/get-contributors.rb)           |    -     |  node  | [cssnr/vitepress-plugin-contributors](https://github.com/cssnr/vitepress-plugin-contributors) | Generate GitHub Repository Contributors JSON |
 | [sharex-cli](Formula/sharex-cli.rb)                       | `sharex` | binary | [cssnr/sharex-cli](https://github.com/cssnr/sharex-cli)                                       | ShareX Command Line Interface Uploader       |
@@ -33,6 +35,8 @@ All Formula support macOS and Linux on ARM (Apple Silicon) and Intel processors.
 
 ```shell
 brew install cssnr/tap/brew-python-resources
+brew install cssnr/tap/bup
+brew install cssnr/tap/hls
 brew install cssnr/tap/get-contributors
 brew install cssnr/tap/npmstat
 brew install cssnr/tap/sharex-cli
@@ -95,6 +99,12 @@ Uninstall a formula.
 
 ```shell
 brew uninstall sharex-cli
+```
+
+Cleanup.
+
+```shell
+brew cleanup --prune=all
 ```
 
 Documentation: <https://docs.brew.sh/>  
