@@ -11,7 +11,7 @@ class Bup < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/smashedr/bup/releases/download/1.0.10/bup_Darwin_x86_64.tar.gz"
-      sha256 "5a5493c2a4bf960daec7d117de4c55655376f010051ada6bbcfee2dde6f84e3f"
+      sha256 "fa683aa84247b9c42cffa4cb67d3d4d0cffb7501c36d17e9cea65ecfaacb9b8e"
 
       def install
         bin.install "bup"
@@ -19,7 +19,7 @@ class Bup < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/smashedr/bup/releases/download/1.0.10/bup_Darwin_arm64.tar.gz"
-      sha256 "9c985696b42341bf4e474b041e1cd8b1de7a782e531873d04ee585f4cc945564"
+      sha256 "609a33646f4ebb0d694df1b9d37019c2332185c7870e4e9fa4d60ccbde1d4e41"
 
       def install
         bin.install "bup"
@@ -30,14 +30,14 @@ class Bup < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/smashedr/bup/releases/download/1.0.10/bup_Linux_x86_64.tar.gz"
-      sha256 "d291c30bfb88edd3c51a5d18064b4f86d1344735958e622a3a506f2fd652c489"
+      sha256 "25d90e9f46607e194d459f18c825ee0d550119f856013b2f0d28fe96dc67d288"
       def install
         bin.install "bup"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/smashedr/bup/releases/download/1.0.10/bup_Linux_arm64.tar.gz"
-      sha256 "539fe6b2e7d6dd5e4e43e4ce40556429a1e5bf72a1470eac1acdbd41abf3dc96"
+      sha256 "40a31f2aa222ebe4b517ed003fec5a1d41594c7202c05c78365a9825f81ad9b6"
       def install
         bin.install "bup"
       end
