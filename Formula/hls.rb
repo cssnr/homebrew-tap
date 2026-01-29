@@ -1,7 +1,7 @@
 class Hls < Formula
   desc "Client for the HLS Video Downloader Web Extension"
   homepage "https://github.com/smashedr/hls-downloader-go"
-  version "0.0.9"
+  version "0.0.10"
   license "MIT"
 
   depends_on "ffmpeg"
