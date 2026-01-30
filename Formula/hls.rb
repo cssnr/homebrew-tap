@@ -4,7 +4,7 @@ class Hls < Formula
   version "0.0.10"
   license "MIT"
 
-  depends_on "ffmpeg"
+  depends_on "ffmpeg" => :recommended
 
   on_macos do
     if Hardware::CPU.intel?
