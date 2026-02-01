@@ -17,7 +17,9 @@
 brew tap cssnr/tap
 ```
 
-🍺 GitHub Action to update Formula: <https://github.com/cssnr/homebrew-action>
+🧪 GitHub Workflow to test Formula: [.github/workflows/test.yaml](https://github.com/cssnr/homebrew-tap/blob/master/.github/workflows/test.yaml)
+
+🍺 GitHub Action to update Formula: [cssnr/homebrew-action](https://github.com/cssnr/homebrew-action)
 
 ## Formula
 
@@ -27,7 +29,7 @@ All Formula support macOS and Linux on ARM (Apple Silicon) and Intel processors.
 | :-------------------------------------------------------- | :------: | :----: | :-------------------------------------------------------------------------------------------- | :------------------------------------------- |
 | [brew-python-resources](Formula/brew-python-resources.rb) |  `bpr`   | python | [cssnr/brew-python-resources](https://github.com/cssnr/brew-python-resources)                 | Update Homebrew Formula Python Resources     |
 | [bup](Formula/bup.rb)                                     |    -     | binary | [smashedr/bup](https://github.com/smashedr/bup)                                               | Back UP CLI written in Go                    |
-| [hls](Formula/hls.rb)                                     |    -     | binary | [smashedr/hls-downloader-go](https://github.com/smashedr/hls-downloader-go)                   | Back UP CLI written in Go                    |
+| [hls](Formula/hls.rb)                                     |    -     | binary | [smashedr/hls-downloader-go](https://github.com/smashedr/hls-downloader-go)                   | HLS Video Downloader Client                  |
 | [npmstat](Formula/npmstat.rb)                             |    -     | python | [cssnr/npmstat](https://github.com/cssnr/npmstat)                                             | NPM Package Stats and Info CLI and Module    |
 | [get-contributors](Formula/get-contributors.rb)           |    -     |  node  | [cssnr/vitepress-plugin-contributors](https://github.com/cssnr/vitepress-plugin-contributors) | Generate GitHub Repository Contributors JSON |
 | [sharex-cli](Formula/sharex-cli.rb)                       | `sharex` | binary | [cssnr/sharex-cli](https://github.com/cssnr/sharex-cli)                                       | ShareX Command Line Interface Uploader       |
@@ -62,7 +64,13 @@ brew tap cssnr/tap
 List formula w/ tap-info `--json`.
 
 ```shell
-brew tap-info cssnr/tap --json | jq '.[0].formula_names'
+brew tap-info cssnr/tap --json | jq -r '.[0].formula_names[]'
+```
+
+List all third-party formula.
+
+```shell
+brew info --json=v2 --installed | jq -r '.formulae[] | select(.tap != "homebrew/core") | "\(.tap)/\(.name)"'
 ```
 
 Update taps.
@@ -87,6 +95,12 @@ Force a re-installation.
 
 ```shell
 brew reinstall sharex-cli
+```
+
+List outdated formula.
+
+```shell
+brew outdated
 ```
 
 Upgrade all installed formula.
