@@ -5,21 +5,21 @@
 class Bup < Formula
   desc "Back UP CLI written in Go"
   homepage "https://github.com/smashedr/bup"
-  version "1.0.13"
+  version "1.0.14"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/smashedr/bup/releases/download/1.0.13/bup_Darwin_x86_64.tar.gz"
-      sha256 "0f226cbbd9911455b6ffcb125b3313dd19c34dc7b927f66cb77b65050bc2d9ea"
+      url "https://github.com/smashedr/bup/releases/download/1.0.14/bup_Darwin_x86_64.tar.gz"
+      sha256 "4512bc7f6e9f84c2ed6307ccb87b32cc72b2492a39061b76ab687e3a40460944"
 
       def install
         bin.install "bup"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/smashedr/bup/releases/download/1.0.13/bup_Darwin_arm64.tar.gz"
-      sha256 "ab235ff3391f0d458229e16d4acced12a1f00016d2847ee788771b06ec7c49c8"
+      url "https://github.com/smashedr/bup/releases/download/1.0.14/bup_Darwin_arm64.tar.gz"
+      sha256 "9a5275ac86dd5a6cbe8545d48c5d7d5fa050de9c6414e6668c34a780a5f32295"
 
       def install
         bin.install "bup"
@@ -29,15 +29,15 @@ class Bup < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/smashedr/bup/releases/download/1.0.13/bup_Linux_x86_64.tar.gz"
-      sha256 "d98d4e550011f49ec2f3c2afa1a33c5d361c685b8b776825272d58580fbc8b56"
+      url "https://github.com/smashedr/bup/releases/download/1.0.14/bup_Linux_x86_64.tar.gz"
+      sha256 "bffd227c040d9d4fb237ead850b57b99f2cd79e7043b0754f2870f9c52bb04e3"
       def install
         bin.install "bup"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/smashedr/bup/releases/download/1.0.13/bup_Linux_arm64.tar.gz"
-      sha256 "cd00108aa8a7595d524239ae49fbe7a4aea7291ec371d0a53d6c2e87c1182202"
+      url "https://github.com/smashedr/bup/releases/download/1.0.14/bup_Linux_arm64.tar.gz"
+      sha256 "57689b52dabc55bf68504753abed3645502a8fa2ac49a2dc17429e6fd81c5d5c"
       def install
         bin.install "bup"
       end
