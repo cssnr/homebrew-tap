@@ -17,9 +17,9 @@
 brew tap cssnr/tap
 ```
 
-🧪 GitHub Workflow to test Formula: [.github/workflows/test.yaml](https://github.com/cssnr/homebrew-tap/blob/master/.github/workflows/test.yaml)
-
 🍺 GitHub Action to update Formula: [cssnr/homebrew-action](https://github.com/cssnr/homebrew-action)
+
+🧪 GitHub Workflow to test Formula: [.github/workflows/test.yaml](https://github.com/cssnr/homebrew-tap/blob/master/.github/workflows/test.yaml)
 
 ## Formula
 
