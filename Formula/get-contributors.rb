@@ -1,8 +1,8 @@
 class GetContributors < Formula
   desc "CLI and Script to Generate GitHub Repository Contributors"
   homepage "https://vitepress-contributors.cssnr.com/"
-  url "https://github.com/cssnr/vitepress-plugin-contributors/releases/download/0.1.0/get-contributors.js"
-  sha256 "d458460ec0200dc4dc798cf4901e5a06745b24ac1277c04f4d95a7236a036133"
+  url "https://github.com/cssnr/vitepress-plugin-contributors/releases/download/0.2.0/get-contributors.mjs"
+  sha256 "e5368de816a55c19f27c6765e169c22965f332be877e5c2233701a1c56c9949d"
   license "GPL-3.0-only"
 
   depends_on "node"
