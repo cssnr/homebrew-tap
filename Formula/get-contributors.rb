@@ -8,8 +8,8 @@ class GetContributors < Formula
   depends_on "node"
 
   def install
-    chmod 0755, "get-contributors.js"
-    bin.install "get-contributors.js" => "get-contributors"
+    chmod 0755, "get-contributors.mjs"
+    bin.install "get-contributors.mjs" => "get-contributors"
   end
 
   def caveats
