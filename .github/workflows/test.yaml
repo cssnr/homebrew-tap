@@ -44,8 +44,8 @@ jobs:
         env:
           formulas: ${{ github.event.inputs.formulas }}
         run: |
-          input="${formulas}"
-          matrix=$(echo "${formulas}" | tr ',' '\n' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | jq -R . | jq -s . | jq -c .)
+          #matrix=$(echo "${formulas}" | tr ',' '\n' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | jq -R . | jq -s . | jq -c .)
+          matrix=$(echo "${formulas}" | tr ',' '\n' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | jq -Rsc 'split("\n") | map(select(length > 0))')
           echo "matrix=${matrix}" >> "${GITHUB_OUTPUT}"
 
       - name: "Debug Files"
@@ -95,14 +95,14 @@ jobs:
 
       - name: "Set Formula"
         run: |
-          echo "env.tap-name: ${{ env.tap-name  }}"
+          echo "env.tap-name: ${{ env.tap-name }}"
           echo "matrix.formula: ${{ matrix.formula }}"
 
           filename="${{ matrix.formula }}"
           name="${filename%.*}"
           echo "name: ${name}"
 
-          formula="${{ env.tap-name  }}/${name}"
+          formula="${{ env.tap-name }}/${name}"
           echo "formula: ${formula}"
           echo "formula=${formula}" >> "$GITHUB_ENV"
 
@@ -130,12 +130,13 @@ jobs:
 
       - name: "Brew Tap"
         run: |
-          brew tap ${{ env.tap-name  }} "file://${{ github.workspace }}"
+          brew tap ${{ env.tap-name }} "file://${{ github.workspace }}"
+          brew trust ${{ env.tap-name }}
 
       - name: "Brew Tap Info"
         run: |
-          brew tap-info ${{ env.tap-name  }}
-          brew tap-info ${{ env.tap-name  }} --json
+          brew tap-info ${{ env.tap-name }}
+          brew tap-info ${{ env.tap-name }} --json
 
       - name: "Brew Install"
         run: |

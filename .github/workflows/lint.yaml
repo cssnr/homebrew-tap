@@ -12,9 +12,9 @@ on:
     branches: [master]
     paths: *paths
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+#concurrency:
+#  group: ${{ github.workflow }}-${{ github.ref }}
+#  cancel-in-progress: true
 
 jobs:
   lint:
@@ -41,14 +41,6 @@ jobs:
         continue-on-error: true
         run: env
 
-      - name: "yamllint"
-        if: ${{ !cancelled() }}
-        run: |
-          echo "::group::List Files"
-          yamllint -c .github/yamllint.yaml --list-files .
-          echo "::endgroup::"
-          yamllint -c .github/yamllint.yaml .
-
       - name: "prettier"
         if: ${{ !cancelled() }}
         run: |
@@ -56,6 +48,16 @@ jobs:
           npm install prettier
           echo "::endgroup::"
           npx prettier --check .
+
+      - name: "yamllint"
+        if: ${{ !cancelled() }}
+        env:
+          CONFIG: .github/yamllint.yaml
+        run: |
+          echo "::group::List Files"
+          yamllint -c "${{ env.CONFIG }}" --list-files .
+          echo "::endgroup::"
+          yamllint -c "${{ env.CONFIG }}" .
 
       - name: "actionlint"
         if: ${{ !cancelled() }}
