@@ -8,6 +8,7 @@ class GetContributors < Formula
   depends_on "node"
 
   def install
+    inreplace "get-contributors.mjs", /\A/, "#!/usr/bin/env node\n"
     chmod 0755, "get-contributors.mjs"
     bin.install "get-contributors.mjs" => "get-contributors"
   end
