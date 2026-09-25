@@ -27,12 +27,12 @@ jobs:
       matrix: ${{ steps.changed-files.outputs.all_changed_files || steps.input-files.outputs.matrix }}
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: "Changed Files"
         if: ${{ github.event_name != 'workflow_dispatch' }}
         id: changed-files
-        uses: tj-actions/changed-files@24d32ffd492484c1d75e0c0b894501ddb9d30d62 # v47
+        uses: tj-actions/changed-files@9426d40962ed5378910ee2e21d5f8c6fcbf2dd96 # v47.0.6
         with:
           matrix: true
           path: "Formula"
@@ -74,12 +74,11 @@ jobs:
       HOMEBREW_NO_AUTO_UPDATE: 1
       HOMEBREW_NO_INSTALL_CLEANUP: 1
       HOMEBREW_NO_INSTALL_UPGRADE: 1
-      HOMEBREW_NO_SANDBOX_LINUX: 1
       HOMEBREW_VERBOSE: 1
 
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: "Debug event.json"
         continue-on-error: true
@@ -179,7 +178,7 @@ jobs:
 
       - name: "Send Failure Notification"
         if: ${{ failure() && github.ref_name == 'master' && github.event_name != 'workflow_dispatch' }}
-        uses: sarisia/actions-status-discord@b8381b25576cb341b2af39926ab42c5056cc44ed # v1.15.5
+        uses: sarisia/actions-status-discord@v1
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           description: |
